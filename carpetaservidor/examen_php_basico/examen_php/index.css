@@ -1,0 +1,37 @@
+body{
+    background-color: brown;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: large;
+}
+.grid-contenedor{
+    display: grid;
+    background-color: blanchedalmond;
+    width: 250px;
+    height: 250px;
+    align-items: center;
+    justify-items: center;
+    grid-template-columns: 200px;
+    grid-template-rows: 1fr;
+
+}
+.num{
+    display: grid;
+    text-align: center;
+    align-self: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background: chartreuse;
+}
+.convert_num{
+    display: grid;
+}
+.ver_num{
+    display: grid;
+}
+
+p{
+    height: 50px;
+    width: 250px;
+    background-color: bisque;
+
+
+}

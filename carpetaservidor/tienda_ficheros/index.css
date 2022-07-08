@@ -1,0 +1,90 @@
+/*   PROPIEDADES DE LOS ITEMS EN GRIND
+-- estos son los hijos de la clase gri- container que creamos en el html
+una de sus propiedades en el div ademas de la clase le podemos dar style para definir cuantas
+columnas o filas queremos que ocupe 
+con grid-area definimos el tamaño podemos usar espan en los dos ultimos valores
+diciendo cuants filas y cuantas columnas va a ocupar */
+
+
+
+
+
+
+
+.grid_container{
+    display: grid;
+    width: 100%;
+    height: 300px;
+    /*height: 600px; */
+    
+    background-color: brown;
+    /*grid-template-columns: auto auto auto; /* el numero de parametros que de es el numero de columnas puede dar distintos tamaños el auto me coge toda la pantalla de forma automatica*/
+    
+    /* podemos definir las areas y crear la plantilla completa desde aqui de la sigu
+    forma grid template area estoy diciendo que quiero un header
+     de 3 posiciones otra fila con el menu el main y aside 
+     y tambien otra final con un footter que me cupa tres posiciones
+     acontinuacion tego que ir a la clase de los hijos 
+     y asignar por medio de la clase en este caso los hijos seria 
+     item1 item 2... EL TAMAÑO LO DEFINO CON TANTOS HEADER QUE QUIERA O MENU IGUAL SI QUIERO 
+     UN MENU DE DOS POSICIONES DOY MENU MENU  */
+    grid-template-areas: 'head head head head'
+                        'menu menu  main aside'
+                        'fotter footter footter footter';
+    /*grid-template-rows: 50px 1fr 30px;
+    grid-template-columns: 150px 1fr;*/
+
+    /*grid-template-rows: auto auto auto; al definir auto se ocupa el espacio del contenido 
+     si le damos un valor ejemplo 50px es lo que ocupara la caja siempre es un valor absoluto*/
+    /*justify-content: center; alinear el contenido horizontal  */
+   /* align-content: space-between;/* alinear el contenido de forma vertical esto debe ir con un higt(tamaño de pantalla definido)sino no funciona */ 
+ /* que es el gap es la sepracion de las columas tenemos para los dos colum gap y row gap
+  para utlizar las dos propiedades en una tenemos LA PROPIEDAD GAP le pasamos 
+  un valor unico y lo hara tanto par fialas como columnas si pasamos otro valor 
+  el primero iria para las filas y el segundo para las columnas */
+}
+.grid_container, div{
+    background-color: cadetblue;
+    text-align: center;
+    color: white;
+    border: 10px solid black;
+}
+.item1{
+  /* grid-column: 2 / span 2; /*1/ 3 ; /* definimos cuanto el tamaño de la columna las medidas son las linea
+    indicn desde donde empieza hasta donde termina  
+    con las funcion span le pasamos dos valores el primero desde donde 
+     queremos que empiece y el segundo valor que sera cuanto queremos que ocupe */
+   /* grid-row: 1 / span 3;  funciona igual que colum */
+    /* tenemos otra propiedad para dar formato a alas tablas y columas 
+    con el grid are  a este metodo le pasamos 4 valores
+    1- el  valor para la primera fila 
+    2- el valor para la primera columna 
+    3- el valor hasta que fila tiene que finalizar
+    4- el valor hasta el final de la columna
+    grid-area: 2 / 2 / 4 / 4 ;
+    -------------------------
+    aqui nombramos los hijos y asi le damos su valor a cada uno 
+    --------------------------------*/
+    grid-area: head;
+    grid-column: 1fr auto ;
+    
+
+
+
+}
+.item2{
+    
+    grid-area: menu;
+    grid-row: 2/ span 3;
+
+}
+.item3{
+    grid-area: main;
+
+}
+.item4{
+    grid-area: aside;
+}
+.item5{
+    grid-area: footter;
+}
